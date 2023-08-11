@@ -4,7 +4,7 @@ pipeline {
     stage('Test Localhost') {
       steps {
         sh 'pip install -r requirements.txt'
-        sh 'uvicorn index:app --host 0.0.0.0 --port 8077'
+        sh 'python3 -m uvicorn index:app --host 0.0.0.0 --port 8077'
       }
     }
     stage('Docker Build') {
