@@ -8,8 +8,8 @@ pipeline {
     }
     stage('Docker Build') {
       steps {
-        sh 'docker build -t 10.1.1.210:30001/ptest:0.0.6 -f Dockerfile .'
-        sh 'docker push 10.1.1.210:30001/ptest:0.0.6'
+        sh 'docker build -t 10.1.1.210:30001/ptest:0.0.7 -f Dockerfile .'
+        sh 'docker push 10.1.1.210:30001/ptest:0.0.7'
       }
     }
   }
