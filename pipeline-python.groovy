@@ -12,5 +12,12 @@ pipeline {
         sh 'docker push 10.1.1.210:30001/ptest:0.0.7'
       }
     }
+
+    stage('Deployment') {
+      sshagent(['ansible_demo']) {
+        sh 'ssh -o StrictHostKeyChecking=no root@10.1.1.210'
+        sh 'env'
+      }
+    }
   }
 }
