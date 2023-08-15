@@ -16,9 +16,8 @@ pipeline {
     stage('Deployment') {
       steps {
         sshagent(['ansible_buuhq']) {
-          sh 'ssh -o StrictHostKeyChecking=no buuhq@10.1.1.210'
-          sh 'env'
-          sh 'pwd'
+          sh 'ssh -o StrictHostKeyChecking=no buuhq@10.1.1.210 env'
+          sh 'ssh -o StrictHostKeyChecking=no buuhq@10.1.1.210 pwd'
         }
       }
     }
