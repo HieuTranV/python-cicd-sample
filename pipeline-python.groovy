@@ -16,7 +16,7 @@ pipeline {
     stage('Deployment') {
       steps {
         sshagent(['ansible_demo']) {
-          sh 'ssh -o StrictHostKeyChecking=no root@10.1.1.210 env'
+          sh 'ssh -o StrictHostKeyChecking=no root@10.1.1.210 kubectl apply -f /opt/test-python/testpython-5001.yaml'
           sh 'ssh -o StrictHostKeyChecking=no root@10.1.1.210 pwd'
         }
       }
